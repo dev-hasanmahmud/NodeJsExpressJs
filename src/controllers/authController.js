@@ -94,7 +94,30 @@ exports.profile = async (req, res) => {
   }
 };
 
+// logout blacklist
+const tokenBlacklist = [];
+
 exports.logout = (req, res) => {
-  // JWT is stateless; client can just delete token
+  const token = req.headers.authorization?.split(" ")[1];
+  if (token) tokenBlacklist.push(token);
   res.json({ message: "Logged out successfully" });
+};
+
+// Middleware to check token
+const authMiddleware = (req, res, next) => {
+  const token = req.headers.authorization?.split(" ")[1];
+  if (!token) return res.status(401).json({ error: "No token provided" });
+
+  // Check blacklist
+  if (tokenBlacklist.includes(token)) {
+    return res.status(401).json({ error: "Token invalidated. Please login again." });
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET || "secret");
+    req.user = decoded;
+    next();
+  } catch (err) {
+    res.status(401).json({ error: "Invalid token" });
+  }
 };

@@ -6,7 +6,7 @@ const fs = require("fs");
 const storage = (folder = "uploads") =>
   multer.diskStorage({
     destination: (req, file, cb) => {
-      const dir = `./public/${folder}`;
+      const dir = `./uploads/${folder}`;
       if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
       cb(null, dir);
     },
