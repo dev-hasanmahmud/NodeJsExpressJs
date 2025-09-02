@@ -1,10 +1,18 @@
 const express = require("express");
 const app = express();
 const sequelize = require("./src/config/db");
-const User = require("./src/models/User"); // your model
+const User = require("./src/models/User"); 
 require("dotenv").config();
+const path = require("path");
+const authRoutes = require("./src/routes/auth");
 
 app.use(express.json());
+
+// Serve static files
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
+
+// Add version prefix for auth
+app.use("/api/v1/auth", authRoutes);
 
 // Example route
 app.get("/", (req, res) => res.send("API running"));
