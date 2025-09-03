@@ -93,7 +93,7 @@
 							},
 							"status": "Created",
 							"code": 201,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -126,6 +126,102 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"message\": \"Registration successful. Check email to verify.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzU2OTEzMTM3LCJleHAiOjE3NTY5MTY3Mzd9.efQkWnazfg1P-RtXtVJoWxITX-tmAIIWgnh2rDditnk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-email",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzU2OTEzMTM3LCJleHAiOjE3NTY5MTY3Mzd9.efQkWnazfg1P-RtXtVJoWxITX-tmAIIWgnh2rDditnk"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify Email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"verify-email",
+										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-tTsVJujpoTDuhbMSkcv9TRP+a5o\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 07:21:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email verified successfully. You can now login.\"\n}"
 						}
 					]
 				},
@@ -212,7 +308,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -256,7 +352,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg0NjM4LCJleHAiOjE3NTY4ODgyMzh9._XK4t5EX8FWwwOzE5wyrWWxZU2NJ3C6XDsy-Tq6PG70",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -313,7 +409,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -357,7 +453,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg0NjM4LCJleHAiOjE3NTY4ODgyMzh9._XK4t5EX8FWwwOzE5wyrWWxZU2NJ3C6XDsy-Tq6PG70",
+									"value": "{{token}}",
 									"type": "string"
 								}
 							]
@@ -454,7 +550,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -555,7 +651,7 @@
 							},
 							"status": "OK",
 							"code": 200,
-							"_postman_previewlanguage": "",
+							"_postman_previewlanguage": null,
 							"header": [
 								{
 									"key": "X-Powered-By",
@@ -592,12 +688,19 @@
 					]
 				},
 				{
-					"name": "Verify Email",
+					"name": "Change Password",
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
 						},
-						"method": "GET",
+						"method": "PUT",
 						"header": [
 							{
 								"key": "Content-Type",
@@ -605,8 +708,17 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"oldPassword\":\"password\",\n    \"newPassword\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:3000/api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM",
+							"raw": "http://localhost:3000/api/v1/auth/change-password",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -616,16 +728,15 @@
 								"api",
 								"v1",
 								"auth",
-								"verify-email",
-								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM"
+								"change-password"
 							]
 						}
 					},
 					"response": [
 						{
-							"name": "Verify Email",
+							"name": "Change Password",
 							"originalRequest": {
-								"method": "GET",
+								"method": "PUT",
 								"header": [
 									{
 										"key": "Content-Type",
@@ -633,8 +744,17 @@
 										"type": "text"
 									}
 								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"oldPassword\":\"password\",\n    \"newPassword\":\"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "http://localhost:3000/api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM",
+									"raw": "http://localhost:3000/api/v1/auth/change-password",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -644,8 +764,7 @@
 										"api",
 										"v1",
 										"auth",
-										"verify-email",
-										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM"
+										"change-password"
 									]
 								}
 							},
@@ -663,15 +782,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "61"
+									"value": "43"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"3d-tTsVJujpoTDuhbMSkcv9TRP+a5o\""
+									"value": "W/\"2b-1leFLxO9pvRJ4B0CZIygDRcnOKs\""
 								},
 								{
 									"key": "Date",
-									"value": "Wed, 03 Sep 2025 07:21:19 GMT"
+									"value": "Wed, 03 Sep 2025 07:44:22 GMT"
 								},
 								{
 									"key": "Connection",
@@ -683,7 +802,448 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"message\": \"Email verified successfully. You can now login.\"\n}"
+							"body": "{\n    \"message\": \"Password updated successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"admin@test.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Password Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"admin@test.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/forgot-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-vxo/+exyEOxX06DmSm6LE3SPIbI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 08:12:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password reset email sent.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzU2OTEzMzQ0LCJleHAiOjE3NTY5MTY5NDR9.xISffOH_wZMWPwOZUc3El4wDMDdxFTLjbdZWjNE1Ekk\",\n    \"newPassword\":\"admin123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzU2OTEzMzQ0LCJleHAiOjE3NTY5MTY5NDR9.xISffOH_wZMWPwOZUc3El4wDMDdxFTLjbdZWjNE1Ekk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNzU2OTEzMzQ0LCJleHAiOjE3NTY5MTY5NDR9.xISffOH_wZMWPwOZUc3El4wDMDdxFTLjbdZWjNE1Ekk"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change Password Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\":\"admin@test.com\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/forgot-password",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"forgot-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "40"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"28-vxo/+exyEOxX06DmSm6LE3SPIbI\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 08:12:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password reset email sent.\"\n}"
+						},
+						{
+							"name": "Forgot Password Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho\",\n    \"newPassword\":\"admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password",
+										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-1leFLxO9pvRJ4B0CZIygDRcnOKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 08:25:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password updated successfully\"\n}"
+						},
+						{
+							"name": "Forgot Password Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho\",\n    \"newPassword\":\"admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password",
+										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-1leFLxO9pvRJ4B0CZIygDRcnOKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 08:25:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password updated successfully\"\n}"
+						},
+						{
+							"name": "Forgot Password Copy",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho\",\n    \"newPassword\":\"admin123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/reset-password/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"reset-password",
+										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg3MTA0LCJleHAiOjE3NTY4OTA3MDR9.V6XL8HO24OngMUXgPi7F1x4i3m2-dGilNGKrAHIl7ho"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-1leFLxO9pvRJ4B0CZIygDRcnOKs\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 08:25:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Password updated successfully\"\n}"
 						}
 					]
 				}
