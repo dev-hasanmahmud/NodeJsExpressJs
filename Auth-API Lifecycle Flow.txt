@@ -1,0 +1,70 @@
+------------------------------------------------
+👤 AUTHENTICATION
+------------------------------------------------
+
+[Client] -- Register (POST /api/v1/auth/register) -->
+    [Server] Validate input (express-validator)
+    [Server] Check if user exists
+    [Server] Hash password (bcrypt)
+    [Server] Save user (Sequelize -> MySQL)
+    [Server] Issue JWT token
+    [Client] <-- { user info + token }
+
+[Client] -- Login (POST /api/v1/auth/login) -->
+    [Server] Validate input
+    [Server] Find user by email
+    [Server] Compare password (bcrypt)
+    [Server] If valid → Issue JWT token
+    [Client] <-- { token }
+
+[Client] -- Logout (POST /api/v1/auth/logout) -->
+    [Server] Option 1: Stateless JWT → tell client to delete token
+    [Server] Option 2: Blacklist token in DB/Redis
+    [Client] <-- { message: "Logged out successfully" }
+
+------------------------------------------------
+👤 USER PROFILE
+------------------------------------------------
+
+[Client] -- Get Profile (GET /api/v1/auth/profile) -->
+    [Server] authMiddleware extracts JWT from Authorization header
+    [Server] Verify token (jsonwebtoken)
+    [Server] Fetch user (exclude password)
+    [Client] <-- { user profile }
+
+[Client] -- Update Profile (PUT /api/v1/auth/profile) -->
+    [Server] authMiddleware verifies JWT
+    [Server] Handle avatar upload (multer)
+    [Server] Update DB with new name/email/bio/avatar
+    [Client] <-- { updated user info }
+
+------------------------------------------------
+🔐 PASSWORD MANAGEMENT
+------------------------------------------------
+
+[Client] -- Change Password (PUT /api/v1/auth/change-password) -->
+    [Server] authMiddleware verifies JWT
+    [Server] Get current user
+    [Server] Compare old password with hash (bcrypt)
+    [Server] If match → Hash new password & update DB
+    [Client] <-- { message: "Password changed successfully" }
+
+------------------------------------------------
+📧 PASSWORD RESET FLOW
+------------------------------------------------
+
+[Client] -- Forgot Password (POST /api/v1/auth/forgot-password) -->
+    [Server] Find user by email
+    [Server] Generate secure resetToken
+    [Server] Save hashed token + expiry in DB
+    [Server] Send email (Mailtrap SMTP) with link:
+             http://localhost:3000/api/v1/auth/reset-password/:token
+    [Client] <-- { message: "Reset email sent" }
+
+[Client] -- Reset Password (POST /api/v1/auth/reset-password/:token) -->
+    [Server] Find user by token
+    [Server] Check token validity & expiry
+    [Server] Hash new password
+    [Server] Update DB with new password
+    [Server] Delete reset token
+    [Client] <-- { message: "Password reset successful" }

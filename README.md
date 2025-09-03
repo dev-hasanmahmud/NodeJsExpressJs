@@ -78,14 +78,6 @@ logging: false
 npx sequelize-cli db:migrate
 ```
 
-
-### API Endpoints:
-Method	Endpoint	Description	Body / Params
-POST	/register	Create new user	{ name, email, password }
-POST	/login	Login user	{ email, password }
-GET	/profile	Get logged-in user profile	JWT token in headers
-POST	/logout	Logout user	JWT token in headers
-
 ```
 npm run dev	-Run server in development mode (nodemon)
 npm start	-Run server in production mode

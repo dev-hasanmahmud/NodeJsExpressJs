@@ -33,7 +33,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}\n",
+							"raw": "{\n  \"name\": \"Admin\",\n  \"email\": \"admin@test.com\",\n  \"password\": \"password\"\n}\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -69,7 +69,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"password\": \"password123\"\n}\n",
+									"raw": "{\n  \"name\": \"Admin\",\n  \"email\": \"admin@test.com\",\n  \"password\": \"password\"\n}\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -91,6 +91,125 @@
 									]
 								}
 							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-JPHVEpmkMZBaxAR35MOnOPVvwNg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 07:28:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Registration successful. Check email to verify.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OCwiZW1haWwiOiJqb2huNUBleGFtcGxlLmNvbSIsImlhdCI6MTc1NjU4Mzk5MywiZXhwIjoxNzU2NTg3NTkzfQ.VLxXbuSDNK-4jvTBGXMj-2tmJUBBVJvxQK4aVOOoJC0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"admin@test.com\",\n  \"password\": \"password\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"admin@test.com\",\n  \"password\": \"password\"\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
 							"status": "OK",
 							"code": 200,
 							"_postman_previewlanguage": "",
@@ -105,15 +224,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "362"
+									"value": "230"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"16a-zng9TGFwmb9WQOd8eNKNg/rTZpA\""
+									"value": "W/\"e6-8KNODij46Lxf6000QRqIdalrBgM\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 02 Sep 2025 13:15:58 GMT"
+									"value": "Wed, 03 Sep 2025 07:30:38 GMT"
 								},
 								{
 									"key": "Connection",
@@ -125,7 +244,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNzU2ODE4OTU4LCJleHAiOjE3NTY4MjI1NTh9.2jdTJR5V3vUhf6Tbys6dGut0YmbRdK6zyQAPJtmdMbw\",\n    \"user\": {\n        \"id\": 3,\n        \"name\": \"John Doe\",\n        \"email\": \"john@example.com\",\n        \"password\": \"$2b$10$3cwCz6JEUOUHZA0fkEtVGeUdne5ZOc.R8PujCMtjO7XrjQMpUFTbC\",\n        \"updatedAt\": \"2025-09-02T13:15:57.918Z\",\n        \"createdAt\": \"2025-09-02T13:15:57.918Z\"\n    }\n}"
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg0NjM4LCJleHAiOjE3NTY4ODgyMzh9._XK4t5EX8FWwwOzE5wyrWWxZU2NJ3C6XDsy-Tq6PG70\",\n    \"user\": {\n        \"id\": 6,\n        \"name\": \"Admin\",\n        \"email\": \"admin@test.com\",\n        \"avatar\": null,\n        \"bio\": null\n    }\n}"
 						}
 					]
 				},
@@ -137,7 +256,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzU2ODE3ODk3LCJleHAiOjE3NTY4MjE0OTd9.jCncpooPrWYLLNrYQGstxuYfvsDDqhclGtIn74ze-os",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg0NjM4LCJleHAiOjE3NTY4ODgyMzh9._XK4t5EX8FWwwOzE5wyrWWxZU2NJ3C6XDsy-Tq6PG70",
 									"type": "string"
 								}
 							]
@@ -206,15 +325,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "156"
+									"value": "169"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"9c-FeeCk02ae/wF5PaHvQT2IwkdB+U\""
+									"value": "W/\"a9-yqe1u0wEfuN7vkyGavWF/7J/0To\""
 								},
 								{
 									"key": "Date",
-									"value": "Tue, 02 Sep 2025 13:16:50 GMT"
+									"value": "Wed, 03 Sep 2025 07:31:24 GMT"
 								},
 								{
 									"key": "Connection",
@@ -226,7 +345,345 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"id\": 3,\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"avatar\": null,\n    \"bio\": null,\n    \"createdAt\": \"2025-09-02T13:15:57.000Z\",\n    \"updatedAt\": \"2025-09-02T13:15:57.000Z\"\n}"
+							"body": "{\n    \"id\": 6,\n    \"name\": \"Admin\",\n    \"email\": \"admin@test.com\",\n    \"avatar\": null,\n    \"bio\": null,\n    \"isVerified\": true,\n    \"createdAt\": \"2025-09-03T07:28:19.000Z\",\n    \"updatedAt\": \"2025-09-03T07:28:46.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Profile Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg0NjM4LCJleHAiOjE3NTY4ODgyMzh9._XK4t5EX8FWwwOzE5wyrWWxZU2NJ3C6XDsy-Tq6PG70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test ",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/hasan/Pictures/profile.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Profile Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test ",
+											"type": "text"
+										},
+										{
+											"key": "bio",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/hasan/Pictures/profile.jpeg"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/profile",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "315"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"13b-Dz968L9AfE8EVDr2tevZNn4Bw7c\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 07:32:39 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Profile updated\",\n    \"user\": {\n        \"id\": 6,\n        \"name\": \"test \",\n        \"email\": \"admin@test.com\",\n        \"password\": \"$2b$10$VPejjeRWM/K/qyY82nL0uu6xHQU8ubobzrI2VSng4.ou1QorbAdHO\",\n        \"avatar\": \"/uploads/avatars/1756884758948.jpeg\",\n        \"bio\": \"test\",\n        \"isVerified\": true,\n        \"createdAt\": \"2025-09-03T07:28:19.000Z\",\n        \"updatedAt\": \"2025-09-03T07:32:39.154Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNzU2ODg0NjM4LCJleHAiOjE3NTY4ODgyMzh9._XK4t5EX8FWwwOzE5wyrWWxZU2NJ3C6XDsy-Tq6PG70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "37"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"25-71uUsMgZY3FdZp9j1h5YMrBIOgg\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 07:34:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Logged out successfully\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Verify Email",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"verify-email",
+								"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Verify Email",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/auth/verify-email/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"auth",
+										"verify-email",
+										"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiaWF0IjoxNzU2ODgzMzAxLCJleHAiOjE3NTY4ODY5MDF9.CrDKy99P6KZgC6Sniv7Ke8TEnF3uU0uyq263MlJpJNM"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "61"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d-tTsVJujpoTDuhbMSkcv9TRP+a5o\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 03 Sep 2025 07:21:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Email verified successfully. You can now login.\"\n}"
 						}
 					]
 				}

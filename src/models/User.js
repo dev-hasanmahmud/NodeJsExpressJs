@@ -9,7 +9,8 @@ const User = sequelize.define(
     email: { type: DataTypes.STRING, allowNull: false, unique: true },
     password: { type: DataTypes.STRING, allowNull: false },
     avatar: { type: DataTypes.STRING, allowNull: true },
-    bio: { type: DataTypes.TEXT, allowNull: true }
+    bio: { type: DataTypes.TEXT, allowNull: true },
+    isVerified: { type: DataTypes.BOOLEAN, defaultValue: false }
   },
   {
     tableName: "users",
