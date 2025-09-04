@@ -5,7 +5,7 @@ require("dotenv").config();
 const path = require("path");
 const authRoutes = require("./src/routes/auth");
 const employeeRoutes = require("./src/routes/employee");
-// const shiftRoutes = require("./src/routes/shift");
+const shiftRoutes = require("./src/routes/shift");
 // const attendanceRoutes = require("./src/routes/attendance");
 
 app.use(express.json());
@@ -16,7 +16,7 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Add version prefix for auth
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/employee", employeeRoutes);
-// app.use("/api/v1/shift", shiftRoutes);
+app.use("/api/v1/shift", shiftRoutes);
 // app.use("/api/v1/attendance", attendanceRoutes);
 
 // Example route
