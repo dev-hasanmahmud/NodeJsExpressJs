@@ -6,29 +6,29 @@ exports.create = [
     .notEmpty()
     .withMessage("Shift name is required"),
 
-  body("start_time")
+  body("startTime")
     .notEmpty()
     .withMessage("Start time is required")
     .isISO8601()
     .withMessage("Start time must be a valid date/time"),
 
-  body("end_time")
+  body("endTime")
     .notEmpty()
     .withMessage("End time is required")
     .isISO8601()
     .withMessage("End time must be a valid date/time"),
 
-  body("late_grace_period")
+  body("lateGracePeriod")
     .optional()
     .isInt({ min: 0 })
     .withMessage("Late grace period must be a non-negative integer (minutes)"),
 
-  body("early_leave_grace_period")
+  body("earlyLeaveGracePeriod")
     .optional()
     .isInt({ min: 0 })
     .withMessage("Early leave grace period must be a non-negative integer (minutes)"),
 
-  body("break_duration")
+  body("breakDuration")
     .optional()
     .isInt({ min: 0 })
     .withMessage("Break duration must be a non-negative integer (minutes)")
@@ -40,27 +40,27 @@ exports.update = [
     .notEmpty()
     .withMessage("Shift name cannot be empty"),
 
-  body("start_time")
+  body("startTime")
     .optional()
     .isISO8601()
     .withMessage("Start time must be a valid date/time"),
 
-  body("end_time")
+  body("endTime")
     .optional()
     .isISO8601()
     .withMessage("End time must be a valid date/time"),
 
-  body("late_grace_period")
+  body("lateGracePeriod")
     .optional()
     .isInt({ min: 0 })
     .withMessage("Late grace period must be a non-negative integer (minutes)"),
 
-  body("early_leave_grace_period")
+  body("earlyLeaveGracePeriod")
     .optional()
     .isInt({ min: 0 })
     .withMessage("Early leave grace period must be a non-negative integer (minutes)"),
 
-  body("break_duration")
+  body("breakDuration")
     .optional()
     .isInt({ min: 0 })
     .withMessage("Break duration must be a non-negative integer (minutes)")
