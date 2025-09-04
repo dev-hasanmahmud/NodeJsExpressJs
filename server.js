@@ -6,24 +6,18 @@ const path = require("path");
 const authRoutes = require("./src/routes/auth");
 const employeeRoutes = require("./src/routes/employee");
 const shiftRoutes = require("./src/routes/shift");
-// const attendanceRoutes = require("./src/routes/attendance");
+const attendanceRoutes = require("./src/routes/attendance");
 
 app.use(express.json());
-
-// Serve static files
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
-// Add version prefix for auth
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/employee", employeeRoutes);
 app.use("/api/v1/shift", shiftRoutes);
-// app.use("/api/v1/attendance", attendanceRoutes);
-
-// Example route
+app.use("/api/v1/attendance", attendanceRoutes);
 app.get("/", (req, res) => res.send("API running"));
 
-// Sync database
-sequelize.sync({ alter: true }) // or { force: true } in development
+sequelize.sync({ alter: true })
   .then(() => {
     console.log("All tables synced!");
     app.listen(process.env.PORT || 3000, () =>

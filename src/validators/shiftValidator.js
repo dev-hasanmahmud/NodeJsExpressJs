@@ -1,4 +1,3 @@
-// src/validators/shiftValidator.js
 const { body } = require("express-validator");
 
 exports.create = [
